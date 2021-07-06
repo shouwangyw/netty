@@ -7,6 +7,9 @@ import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.codec.LengthFieldPrepender;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
@@ -24,8 +27,9 @@ public class SomeClient {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
-//                            pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
+                            pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new SomeClientHandler());
+//                            pipeline.addLast(new CustomEncoderHandler());
                         }
                     });
             ChannelFuture future = bootstrap.connect("localhost", 8888).sync();

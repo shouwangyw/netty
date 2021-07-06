@@ -29,6 +29,13 @@ public class SomeClient {
                         @Override
                         protected void initChannel(SocketChannel channel) throws Exception {
                             ChannelPipeline pipeline = channel.pipeline();
+
+                            // 基于长度域的帧解码器
+                            pipeline.addLast(new LengthFieldBasedFrameDecoder(
+                                    1024, 0,
+                                    4, 0, 4));
+                            pipeline.addLast(new LengthFieldPrepender(4));
+
                             pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
                             pipeline.addLast(new SomeClientHandler());

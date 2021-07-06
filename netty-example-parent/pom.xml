@@ -23,6 +23,7 @@
 
   <modules>
     <module>01-primary</module>
+    <module>02-stick-unpack-codec</module>
   </modules>
 
   <dependencies>

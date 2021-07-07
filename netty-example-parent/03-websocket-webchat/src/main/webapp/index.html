@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netty WebSocket Client</title>
+</head>
+<script type="text/javascript">
+  var socket;
+  if (window.WebSocket) {
+    socket = new WebSocket("ws://localhost:8888/some");
+    // 当与服务端的ws连接创建成功后会触发onopen的执行
+    socket.onopen = function (ev) {
+      document.getElementById("receiver").value = '连接已建立';
+    }
+    // 当接收到服务端发送的消息时会触发onmessage的执行
+    socket.onmessage = function (ev) {
+      var receiver = document.getElementById("receiver");
+      receiver.value = receiver.value + '\n' + ev.data;
+    }
+    // 当与服务端的ws连接断开时会触发onclose的执行
+    socket.onclose = function (ev) {
+      var receiver = document.getElementById("receiver");
+      receiver.value = receiver.value + '\n连接已关闭';
+    }
+  } else {
+    alert('当前浏览器不支持WebSocket');
+  }
+
+  // 定义发送按钮的发送方法
+  function send(msg) {
+    if (!window.WebSocket) return;
+    if (!msg) return;
+    if (socket.readyState == WebSocket.OPEN) {
+      socket.send(msg);
+      document.getElementById("sender").value = '';
+    }
+  }
+</script>
+<body>
+<form>
+  <textarea id="sender" style="width: 150px; height: 150px"></textarea>
+  <input type="button" value="Send" onclick="send(this.form.sender.value)">
+  <textarea id="receiver" style="width: 150px; height: 150px"></textarea>
+</form>
+</body>
+</html>

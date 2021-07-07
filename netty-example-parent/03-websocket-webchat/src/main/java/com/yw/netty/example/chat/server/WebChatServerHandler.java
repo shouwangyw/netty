@@ -1,4 +1,4 @@
-package com.yw.netty.example.server;
+package com.yw.netty.example.chat.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,4 +1,4 @@
-package com.yw.netty.example.server;
+package com.yw.netty.example.chat.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

@@ -25,6 +25,7 @@
     <module>01-primary</module>
     <module>02-stick-unpack-codec</module>
     <module>03-websocket-webchat</module>
+    <module>04-tomcat-custom</module>
   </modules>
 
   <dependencies>

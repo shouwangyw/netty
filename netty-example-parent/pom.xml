@@ -28,6 +28,7 @@
     <module>04-tomcat-custom</module>
     <module>05-rpc-custom</module>
     <module>06-dubbo-custom</module>
+    <module>07-dubbo-custom</module>
   </modules>
 
   <dependencies>

@@ -29,6 +29,7 @@
     <module>05-rpc-custom</module>
     <module>06-dubbo-custom</module>
     <module>07-dubbo-custom</module>
+    <module>08-multiports</module>
   </modules>
 
   <dependencies>

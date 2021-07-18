@@ -32,6 +32,7 @@
     <module>08-multiports</module>
     <module>09-nio-example</module>
     <module>10-inbound-outbound</module>
+    <module>11-exception-handler</module>
   </modules>
 
   <dependencies>

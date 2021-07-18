@@ -31,6 +31,7 @@
     <module>07-dubbo-custom</module>
     <module>08-multiports</module>
     <module>09-nio-example</module>
+    <module>10-inbound-outbound</module>
   </modules>
 
   <dependencies>

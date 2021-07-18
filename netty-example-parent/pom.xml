@@ -30,6 +30,7 @@
     <module>06-dubbo-custom</module>
     <module>07-dubbo-custom</module>
     <module>08-multiports</module>
+    <module>09-nio-example</module>
   </modules>
 
   <dependencies>
